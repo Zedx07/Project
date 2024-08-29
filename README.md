@@ -1,4 +1,4 @@
-# Angular/.Net CRUD Assigment
+# Angular/.Net CRUD Assignment
 
 ## Team Members [Employee ID]
 
