@@ -45,12 +45,25 @@ namespace WebAPI
             });
 
             //Enable CORS
-            services.AddCors(c =>
-            {
-                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod()
-                 .AllowAnyHeader());
-            });
+            // services.AddCors(c =>
+            // {
+            //     c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod()
+            //      .AllowAnyHeader());
+            // });
 
+            services.AddCors(options =>
+        {
+            options.AddPolicy("AllowAllOrigins",
+                builder =>
+                {
+                    builder.AllowAnyOrigin()
+                           .AllowAnyMethod()
+                           .AllowAnyHeader();
+                });
+        });
+
+            // Add other services like MVC or Razor Pages
+            // services.AddControllers(); // or AddMvc(), AddRazorPages(), etc.
             //JSON Serializer
             services.AddControllersWithViews().AddNewtonsoftJson(options =>
             options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
@@ -65,7 +78,7 @@ namespace WebAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }           
+            }
 
             app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 

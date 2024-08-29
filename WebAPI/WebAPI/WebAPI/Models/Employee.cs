@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebAPI.Models
@@ -11,8 +12,8 @@ namespace WebAPI.Models
         public int EmployeeId { get; set; }
         public string EmployeeName { get; set; }
         public string Department { get; set; }
-        public string DateOfJoining { get; set; }
-        public string PhotoFileName { get; set; }
+        public DateTime DOJ { get; set; }
+        // public string PhotoFileName { get; set; }
 
     }
 }

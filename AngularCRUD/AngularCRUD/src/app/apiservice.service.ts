@@ -6,14 +6,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiserviceService {
-  readonly apiUrl = 'http://localhost:50306/api/';
-  readonly photoUrl = "http://localhost:50306/Photos/";
+  readonly apiUrl = 'http://localhost:53535/api/';
+  readonly photoUrl = "http://localhost:53535/Photos/";
 
   constructor(private http: HttpClient) { }
 
   // Department
   getDepartmentList(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl + 'department/GetDepartment');
+    const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }) };
+
+    return this.http.get<any[]>(this.apiUrl + 'department/GetDepartment', httpOptions);
   }
 
   addDepartment(dept: any): Observable<any> {

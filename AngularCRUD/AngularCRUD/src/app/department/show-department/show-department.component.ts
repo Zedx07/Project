@@ -52,12 +52,19 @@ export class ShowDepartmentComponent implements OnInit {
     this.refreshDepList();
   }
 
-
+//   doGET() {
+//     this.service.getData()
+//             .subscribe(data => {
+//                 console.log('data', data);
+//             });
+// }
   refreshDepList() {
     this.service.getDepartmentList().subscribe(data => {
+      console.log(data);
       this.DepartmentList = data;
       this.DepartmentListWithoutFilter = data;
     });
+    
   }
 
   sortResult(prop: any, asc: any) {
