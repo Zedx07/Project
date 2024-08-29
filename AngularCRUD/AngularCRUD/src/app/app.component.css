@@ -1,0 +1,35 @@
+/* Global Styles */
+body {
+  background-color: #f8f9fa; /* Light grey background for the entire page */
+}
+
+.navbar {
+  background-color: #ffffff; /* White background for the navbar */
+}
+
+.navbar-light .navbar-brand {
+  color: #28a745; /* Green color for the brand name */
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #343a40; /* Dark color for the nav links */
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #007bff; /* Blue color on hover */
+}
+
+.navbar-light .navbar-nav .nav-link.btn-outline-primary {
+  border-color: #007bff; /* Blue border for primary buttons */
+  color: #007bff; /* Blue text for primary buttons */
+}
+
+.navbar-light .navbar-nav .nav-link.btn-outline-info {
+  border-color: #17a2b8; /* Teal border for info buttons */
+  color: #17a2b8; /* Teal text for info buttons */
+}
+
+.navbar-light .navbar-nav .nav-link.btn-outline-primary:hover,
+.navbar-light .navbar-nav .nav-link.btn-outline-info:hover {
+  background-color: #f8f9fa; /* Light background on hover */
+}
